@@ -5,10 +5,6 @@ class Book < Item
     @cover_state = cover_state
   end
 
-  def add_item(Book)
-    @items << Book
-  end
-
   def can_be_archived?
     true super == true || cover_state == 'bad'
   end
