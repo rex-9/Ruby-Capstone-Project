@@ -4,4 +4,8 @@ class Book < Item
     @cover_state = cover_state
     super()
   end
+
+  def add_item(Book)
+    @items << Book
+  end
 end

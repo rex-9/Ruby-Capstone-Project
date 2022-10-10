@@ -1,8 +1,15 @@
-class Author
-  def initialize(f-name, l-name)
+require_relative 'item'
+
+class Author < Item
+  def initialize(_first_name, _last_name)
+    super()
     @id = Random.rand(1..1000)
-    @f-name = f-name
-    @l-name = l-name
+    @first_name = first_name
+    @last_name = last_name
     @items = []
+  end
+
+  def add_item(_author)
+    @items << Author
   end
 end

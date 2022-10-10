@@ -8,4 +8,7 @@ class Item
     @published_date = published_date
     @archived = archived
   end
+
+ 
+
 end
