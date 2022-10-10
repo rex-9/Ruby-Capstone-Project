@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/ParameterLists
 class Item
   attr_reader :id
   attr_accessor :published_date, :archived
@@ -26,3 +27,4 @@ class Item
     true if can_be_archived? == true
   end
 end
+# rubocop:enable Metrics/ParameterLists
