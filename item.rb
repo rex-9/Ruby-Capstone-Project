@@ -26,5 +26,9 @@ class Item
   def move_to_archived?
     true if can_be_archived? == true
   end
+
+  def genre=(genre)
+    @genre = genre
+  end
 end
 # rubocop:enable Metrics/ParameterLists
