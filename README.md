@@ -18,7 +18,9 @@ you@your-Pc-name:~$ cd <Ruby-Capstone-Project>
 
 
 
-## Rex
+## Authors
+
+👤 **Rex**
 
 - Github: [@rex-9](https://github.com/rex-9/)<br>
 - Medium: [@rex9](https://medium.com/rex9/)<br>
