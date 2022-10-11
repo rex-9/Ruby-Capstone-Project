@@ -7,12 +7,8 @@ describe Game do
     source = Source.new('Steam')
     label = Label.new('Elden Ring', 'Golden')
     @game = Game.new(
-      true,
-      Time.now,
-      genre: genre,
-      author: author,
-      source: source,
-      label: label,
+      multiplayer: true,
+      last_played_at: Time.now,
       published_date: '18-03-2000')
   end
 
