@@ -1,7 +1,7 @@
 class Label
   attr_accessor :id, :title, :color, :items
 
-  def initialize(title, color)
+  def initialize(title, color = 'Red')
     @id = Random.rand(1..1000)
     @title = title
     @color = color
@@ -9,6 +9,7 @@ class Label
   end
 
   def add_item(item)
+    item.label = self
     @items << item
   end
 end

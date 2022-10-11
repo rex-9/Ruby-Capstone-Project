@@ -1,4 +1,22 @@
+require_relative 'game'
+
 class App
+  def list_books
+    puts 'all books'
+  end
+
+  def list_music_albums
+    puts 'all music_albums'
+  end
+
+  def list_movies
+    puts 'all movies'
+  end
+
+  def list_games
+    puts Game.load_games
+  end
+
   def add_book
     puts 'this is where you add a book'
   end

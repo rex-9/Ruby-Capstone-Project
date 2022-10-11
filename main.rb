@@ -11,14 +11,14 @@ def main
     puts ' 2 - List all music albums'
     puts ' 3 - List all movies'
     puts ' 4 - List of games'
-    puts ' 5 - List all genres (Comedy, Thriller)'
-    puts ' 6 - List all labels (Gift, New)'
-    puts ' 7 - List all authors (Stephen King)'
-    puts ' 8 - List all sources (From a friend, Online shop)'
-    puts ' 9 - Add a book'
-    puts '10 - Add a movie'
-    puts '11 - Add a game'
-    puts '12 - Exit'
+    # puts ' 5 - List all genres (Comedy, Thriller)'
+    # puts ' 6 - List all labels (Gift, New)'
+    # puts ' 7 - List all authors (Stephen King)'
+    # puts ' 8 - List all sources (From a friend, Online shop)'
+    # puts ' 9 - Add a book'
+    # puts '10 - Add a movie'
+    # puts '11 - Add a game'
+    # puts '12 - Exit'
     option = gets.chomp.to_i
     select = Selection.new
     select.select_method(option, app)
@@ -35,7 +35,7 @@ class Selection
     when 2
       app.list_music_albums
     when 3
-      app.list_movie
+      app.list_movies
     when 4
       app.list_games
     when 5

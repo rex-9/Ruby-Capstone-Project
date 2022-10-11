@@ -8,6 +8,7 @@ class Source
   end
 
   def add_item(item)
+    item.source = self
     @items << item
   end
 end

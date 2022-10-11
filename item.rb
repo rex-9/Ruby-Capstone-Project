@@ -5,16 +5,16 @@ class Item
   attr_reader :id
   attr_accessor :published_date, :archived, :genre
 
-  def initialize(genre:, author:, source:, label:, published_date:, archived: false)
+  def initialize(published_date:, archived: false)
     @id = Random.rand(1..1000)
-    @genre = genre
-    genre.items << self
-    @author = author
-    author.items << self
-    @source = source
-    source.items << self
-    @label = label
-    label.items << self
+    # @genre = genre
+    # genre.items << self
+    # @author = author
+    # author.items << self
+    # @source = source
+    # source.items << self
+    # @label = label
+    # label.items << self
     @published_date = published_date
     @archived = archived
   end
@@ -30,8 +30,20 @@ class Item
     can_be_archived? == true
   end
 
-  # def genre=(genre)
-  #   @genre = genre
-  # end
+  def genre=(genre)
+    @genre = genre
+  end
+
+  def author=(author)
+    @author = author
+  end
+
+  def source=(source)
+    @source = source
+  end
+
+  def label=(label)
+    @label = label
+  end
 end
 # rubocop:enable Metrics/ParameterLists

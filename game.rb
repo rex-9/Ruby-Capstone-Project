@@ -4,12 +4,12 @@ require 'json'
 # rubocop:disable Metrics/ParameterLists
 
 class Game < Item
-  attr_reader :multiplayer, :last_played_at, :genre, :author, :source, :label, :published_date
+  attr_reader :multiplayer, :last_played_at, :published_date
 
-  def initialize(multiplayer, last_played_at, genre:, author:, source:, label:, published_date:)
+  def initialize(multiplayer:, last_played_at:, published_date:)
     @multiplayer = multiplayer
     @last_played_at = last_played_at
-    super(genre: genre, author: author, source: source, label: label, published_date: published_date)
+    super(published_date: published_date)
   end
 
   def can_be_archived?
@@ -47,6 +47,16 @@ class Game < Item
     end
   end
 
+  def self.load_games
+    return unless File.exist?('games.json')
+    games_file = File.read('games.json')
+    games = JSON.parse(games_file)
+    games.each do |game|
+      puts "id: #{game['id']}"
+      # , game['multiplayer'], genre: game['genre'], author: game['author'], source: game['source'], label: game['label'], published_date: game['published_date']
+    end
+    puts "hello"
+  end
 end
 
 # rubocop:enable Metrics/ParameterLists
