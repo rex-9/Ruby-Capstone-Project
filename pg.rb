@@ -20,18 +20,20 @@ game = Game.new(
 book = Book.new(
   publisher: true,
   cover_state: 'good',
-  published_date: '18-03-2015'
+  published_date: '18-03-2000'
 )
 
+#puts game.can_be_archived?
 
-puts game.can_be_archived?
-
-puts book.can_be_archived?
+#puts book.can_be_archived?
 # genre.add_item(game)
 # author.add_item(game)
 # label.add_item(game)
 # source.add_item(game)
-
+# genre.add_item(book)
+# author.add_item(book)
+# label.add_item(book)
+# source.add_item(book)
 # puts genre.items.inspect
 # puts author.items.inspect
 # puts label.items.inspect
