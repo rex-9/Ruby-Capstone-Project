@@ -1,8 +1,9 @@
 require_relative 'game'
+require_relative 'book'
 
 class App
   def list_books
-    puts 'all books'
+    puts Book.load_books
   end
 
   def list_music_albums
