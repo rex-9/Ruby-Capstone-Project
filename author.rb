@@ -24,12 +24,12 @@ class Author
       authors << {
         id: author.id,
         first_name: author.first_name,
-        last_name: author.last_name,
+        last_name: author.last_name
       }
     end
 
     File.write('authors.json', JSON.pretty_generate(authors))
-    'Author saved to authors.json'
+    'Authors saved to authors.json'
   end
 
   def self.load_authors

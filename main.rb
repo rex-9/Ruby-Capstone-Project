@@ -46,9 +46,9 @@ class Selection
   def select_extra_method(option, app)
     case option
     when 7
-      app.list_all_genres
-    when 8
       app.list_all_labels
+    when 8
+      app.list_all_genres
     when 9
       app.list_all_authors
     end

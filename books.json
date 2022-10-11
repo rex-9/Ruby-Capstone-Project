@@ -1,0 +1,13 @@
+[
+  {
+    "id": 402,
+    "publisher": "ppp",
+    "cover_state": "bad",
+    "label": {
+      "id": 345,
+      "title": "hello",
+      "color": "Red"
+    },
+    "published_date": "10-10-10"
+  }
+]
