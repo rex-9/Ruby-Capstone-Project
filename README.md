@@ -1,22 +1,26 @@
 # Project: Ruby Capstone Project
 
 ## Built With
+
 - Languages: Ruby
 
 ## Getting started
+
 To get a local copy of this exercice, Please follow these simple example steps.
+
 #### 1. Clone this repository or download the Zip folder:"
 
 ```bash command
 $ git clone https://github.com/rex-9/Ruby-Capstone-Project.git
 ```
+
 #### 2. Navigate to the location of the folder in your machine:
+
 ```bash command
 you@your-Pc-name:~$ cd <Ruby-Capstone-Project>
 ```
+
 #### 3. Press Enter to navigate to your local clone.
-
-
 
 ## Authors
 

@@ -13,7 +13,8 @@ describe Game do
       author: author,
       source: source,
       label: label,
-      published_date: '18-03-2000')
+      published_date: '18-03-2000'
+    )
   end
 
   describe '#new' do

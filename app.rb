@@ -1,8 +1,15 @@
 require_relative 'game'
+require_relative 'book'
 
 class App
+  attr_accessor :items
+
+  def initialize
+    @items = []
+  end
+
   def list_books
-    puts 'all books'
+    puts Book.load_books
   end
 
   def list_music_albums
@@ -18,7 +25,7 @@ class App
   end
 
   def add_book
-    puts 'this is where you add a book'
+   Book.save
   end
 
   def add_game
