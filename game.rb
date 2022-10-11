@@ -1,8 +1,6 @@
 require_relative 'item'
 require 'json'
 
-# rubocop:disable Metrics/ParameterLists
-
 class Game < Item
   attr_reader :multiplayer, :last_played_at, :published_date
 
@@ -58,5 +56,3 @@ class Game < Item
     puts "hello"
   end
 end
-
-# rubocop:enable Metrics/ParameterLists

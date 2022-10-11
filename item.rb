@@ -1,20 +1,11 @@
 require 'date'
 
-# rubocop:disable Metrics/ParameterLists
 class Item
   attr_reader :id
   attr_accessor :published_date, :archived, :genre
 
   def initialize(published_date:, archived: false)
     @id = Random.rand(1..1000)
-    # @genre = genre
-    # genre.items << self
-    # @author = author
-    # author.items << self
-    # @source = source
-    # source.items << self
-    # @label = label
-    # label.items << self
     @published_date = published_date
     @archived = archived
   end
@@ -46,4 +37,3 @@ class Item
     @label = label
   end
 end
-# rubocop:enable Metrics/ParameterLists

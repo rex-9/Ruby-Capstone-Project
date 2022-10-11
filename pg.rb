@@ -15,14 +15,16 @@ game = Game.new(
   published_date: '18-03-2000'
 )
 
-genre.add_item(game)
-author.add_item(game)
-label.add_item(game)
-source.add_item(game)
+puts game.can_be_archived?
 
-puts genre.items.inspect
-puts author.items.inspect
-puts label.items.inspect
-puts source.items.inspect
+# genre.add_item(game)
+# author.add_item(game)
+# label.add_item(game)
+# source.add_item(game)
+
+# puts genre.items.inspect
+# puts author.items.inspect
+# puts label.items.inspect
+# puts source.items.inspect
 
 # genre: genre, author: author, source: source, label: label,
