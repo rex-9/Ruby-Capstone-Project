@@ -15,18 +15,33 @@ class Book < Item
   end
 
   def save
+    puts 'Add book to library'
+    puts 'Enter Label'
+    label = gets.chomp
+    puts 'Enter Author'
+    author = gets, chomp
+    puts 'Enter Publisher'
+    publisher = gets.chomp
+    puts 'Enter publish date:'
+    published_date = gets.chomp
+    puts 'Enter Book Genre'
+    genre = gets.chomp
+    puts 'Enter Source '
+    source = gets.chomp
+    puts 'is cover state "bad" or "good"'
+    cover_state = gets.chomp
     if File.exist?('book.json')
       books_file = File.read('book.json')
       books = JSON.parse(books_file)
       books << {
         id: id,
-        publisher: publisher,
-        cover_state: cover_state,
-        genre: genre.name,
-        author: "#{author.first_name} #{author.last_name}",
-        source: source.name,
         label: label.name,
+        author: "#{author.first_name} #{author.last_name}",
+        publisher: publisher,
         published_date: published_date
+        genre: genre.name,
+        source: source.name,
+        cover_state: cover_state,
       }
 
       File.write('book.json', JSON.pretty_generate(books))
