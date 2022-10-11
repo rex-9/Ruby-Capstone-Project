@@ -1,7 +1,7 @@
 # rubocop:disable Metrics/ParameterLists
 class Item
   attr_reader :id
-  attr_accessor :published_date, :archived
+  attr_accessor :published_date, :archived, :genre
 
   def initialize(genre:, author:, source:, label:, published_date:, archived: false)
     @id = Random.rand(1..1000)
@@ -27,8 +27,8 @@ class Item
     true if can_be_archived? == true
   end
 
-  def genre=(genre)
-    @genre = genre
-  end
+  # def genre=(genre)
+  #   @genre = genre
+  # end
 end
 # rubocop:enable Metrics/ParameterLists
