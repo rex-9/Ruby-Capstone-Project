@@ -10,6 +10,10 @@ class Game < Item
     @last_played_at = last_played_at
     super(genre: genre, author: author, source: source, label: label, published_date: published_date)
   end
+
+  def can_be_archived?
+    super && Time.now.year - @last_played_at.year > 2
+  end
 end
 
 # rubocop:enable Metrics/ParameterLists

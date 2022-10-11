@@ -19,6 +19,6 @@ game = Game.new(
   published_date: '18-03-2000'
 )
 puts game.published_date
-# puts genre.items
+puts game.can_be_archived?
 
 # genre: genre, author: author, source: source, label: label,

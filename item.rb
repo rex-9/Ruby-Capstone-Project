@@ -1,3 +1,5 @@
+require 'date'
+
 # rubocop:disable Metrics/ParameterLists
 class Item
   attr_reader :id
@@ -18,7 +20,8 @@ class Item
   end
 
   def can_be_archived?
-    true if @published_date > 10
+    published_year = Date.strptime(@published_date,'%d-%m-%Y').strftime('%Y')
+    Time.now.year - published_year.to_i > 10
   end
 
   private :can_be_archived?
