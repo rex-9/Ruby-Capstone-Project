@@ -51,7 +51,14 @@ class Book < Item
     books_file = File.read('book.json')
     books = JSON.parse(books_file)
     books.each do |book|
-      puts "id: #{book['id']}"
+      puts "id: #{book['id']}
+      author: #{book['author']}
+      source: #{book['source']}
+      publisher: #{book['publisher']}
+      cover_state: #{book['cover_state']}
+      label: #{book['label']}
+      genre: #{book['genre']}
+      "
     end
     puts 'no books exist'
   end
