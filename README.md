@@ -1,4 +1,4 @@
-# Project: Ruby Capstone Project
+# Ruby Capstone Project
 
 ## Built With
 

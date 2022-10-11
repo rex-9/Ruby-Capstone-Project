@@ -14,29 +14,22 @@ class Author
     @items << item
   end
 
-  def self.save
-    if File.exist?('authors.json')
-      true
-      # authors_file = File.read('authors.json')
-      # authors = JSON.parse(authors_file)
-      # authors << {
-      #   id: id,
-      #   first_name: first_name,
-      #   last_name: last_name,
-      #   items: items
-      # }
+  def self.all
+    ObjectSpace.each_object(self).to_a
+  end
 
-      # File.write('authors.json', JSON.pretty_generate(authors))
-      # 'Author saved to authors.json'
-    else
-      File.write('authors.json',
-        JSON.pretty_generate([{
-          id: id,
-          first_name: first_name,
-          last_name: last_name,
-          items: items
-        }]))
+  def self.save
+    authors = []
+    all.each do |author|
+      authors << {
+        id: author.id,
+        first_name: author.first_name,
+        last_name: author.last_name,
+      }
     end
+
+    File.write('authors.json', JSON.pretty_generate(authors))
+    'Author saved to authors.json'
   end
 
   def self.load_authors
