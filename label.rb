@@ -41,9 +41,9 @@ class Label
       new(title: label['title'])
     end
     all.each do |label|
-      puts "#{label.title}"
+      puts label.title.to_s
       puts '-----------------'
     end
-    return
+    nil
   end
 end

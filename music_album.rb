@@ -28,7 +28,7 @@ class MusicAlbum < Item
         on_spotify: album.on_spotify,
         genre: {
           id: album.genre.id,
-          name: album.genre.name,
+          name: album.genre.name
         },
         published_date: album.published_date
       }
@@ -55,8 +55,8 @@ class MusicAlbum < Item
       puts "Genre: #{album.genre.name}"
       puts "On Spotify: #{album.on_spotify}"
       puts "Published Date: #{album.published_date}"
-      puts "_______________________________"
+      puts '_______________________________'
     end
-    return
+    nil
   end
 end

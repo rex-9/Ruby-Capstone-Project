@@ -44,6 +44,6 @@ class Author
       puts "#{author.first_name} #{author.last_name}"
       puts '-----------------'
     end
-    return
+    nil
   end
 end
