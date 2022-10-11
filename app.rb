@@ -1,15 +1,19 @@
 require_relative 'game'
 require_relative 'book'
+require_relative 'label'
 
 class App
-  attr_accessor :items
+  attr_accessor :items, :labels, :books
 
   def initialize
-    @items = []
+    @items = items
+    @labels = labels
+    @books = books
   end
 
   def list_books
-    puts Book.load_books
+    book = Book.new
+    book.load_books
   end
 
   def list_music_albums
@@ -27,13 +31,14 @@ class App
   def add_book
     puts 'Add book to library'
     print 'Enter Label: '
-    label = gets.chomp
     print 'Enter Publisher: '
     publisher = gets.chomp
     print 'Enter publish date: '
     published_date = gets.chomp
     print 'Cover State: '
     cover_state = gets.chomp
+    book = Book.new(publisher, published_date, cover_state)
+    book.save
   end
 
   def add_game
@@ -58,6 +63,6 @@ class App
   end
 
   def list_all_labels
-    puts 'all labels'
+    puts Label.load_labels
   end
 end
