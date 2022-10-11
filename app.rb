@@ -36,7 +36,7 @@ class App
     print 'Enter publish date: '
     published_date = gets.chomp
     MusicAlbum.new(on_spotify: on_spotify, published_date: published_date, genre: genre)
-    puts "Music Album added successfully"
+    puts 'Music Album added successfully'
   end
 
   def add_book
@@ -51,7 +51,7 @@ class App
     print 'Cover State: '
     cover_state = gets.chomp
     Book.new(publisher: publisher, published_date: published_date, cover_state: cover_state, label: label)
-    puts "Book added successfully"
+    puts 'Book added successfully'
   end
 
   def add_game
@@ -69,8 +69,9 @@ class App
     last_played_at = gets.chomp
     print 'Enter publish date: '
     published_date = gets.chomp
-    Game.new(name: name, multiplayer: multiplayer, last_played_at: last_played_at, published_date: published_date, author: author)
-    puts "Game added successfully"
+    Game.new(name: name, multiplayer: multiplayer, last_played_at: last_played_at, published_date: published_date,
+             author: author)
+    puts 'Game added successfully'
   end
 
   def list_all_genres
@@ -92,7 +93,7 @@ class App
     Label.save
     MusicAlbum.save
     Genre.save
-    puts "Saved All Data Successfully!"
+    puts 'Saved All Data Successfully!'
     puts 'See You Next Time!'
     exit
   end

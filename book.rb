@@ -59,8 +59,8 @@ class Book < Item
       puts "Cover State: #{book.cover_state}"
       puts "Label: #{book.label.title}"
       puts "Published Date: #{book.published_date}"
-      puts "_______________________________"
+      puts '_______________________________'
     end
-    return
+    nil
   end
 end

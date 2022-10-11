@@ -1,5 +1,5 @@
 class Genre
-  attr_reader :id,
+  attr_reader :id
   attr_accessor :name, :items
 
   def initialize(name:)
@@ -22,7 +22,7 @@ class Genre
     all.each do |genre|
       genres << {
         id: genre.id,
-        name: genre.name,
+        name: genre.name
       }
     end
 
@@ -39,9 +39,9 @@ class Genre
       end
     end
     all.each do |genre|
-      puts "#{genre.name}"
+      puts genre.name.to_s
       puts '-----------------'
     end
-    return
+    nil
   end
 end

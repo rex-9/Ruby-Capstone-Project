@@ -27,7 +27,6 @@ puts Game.load_games
 # author.add_item(game)
 # puts author.items.inspect
 
-
 # user choose 'add a game'
 # we will ask the user to create a new author
 # create new author
