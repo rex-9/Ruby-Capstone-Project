@@ -33,12 +33,12 @@ class Author
   end
 
   def self.load_authors
-    return unless File.exist?('authors.json')
-
-    authors_file = File.read('authors.json')
-    authors = JSON.parse(authors_file)
-    authors.each do |author|
-      new(first_name: author['first_name'], last_name: author['last_name'])
+    if File.exist?('authors.json')
+      authors_file = File.read('authors.json')
+      authors = JSON.parse(authors_file)
+      authors.each do |author|
+        new(first_name: author['first_name'], last_name: author['last_name'])
+      end
     end
     all.each do |author|
       puts "#{author.first_name} #{author.last_name}"

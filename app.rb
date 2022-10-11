@@ -2,6 +2,8 @@ require_relative 'game'
 require_relative 'author'
 require_relative 'book'
 require_relative 'label'
+require_relative 'music_album'
+require_relative 'genre'
 
 class App
   attr_accessor :items, :labels, :books
@@ -17,15 +19,24 @@ class App
   end
 
   def list_music_albums
-    puts 'all music_albums'
-  end
-
-  def list_movies
-    puts 'all movies'
+    puts MusicAlbum.load_albums
   end
 
   def list_games
     puts Game.load_games
+  end
+
+  def add_music_album
+    puts 'Add Music Album to library'
+    print 'Enter Genre: '
+    genre = gets.chomp
+    genre = Genre.new(name: genre)
+    print 'Enter On Spotify [true or false]: '
+    on_spotify = gets.chomp.downcase == 'true'
+    print 'Enter publish date: '
+    published_date = gets.chomp
+    MusicAlbum.new(on_spotify: on_spotify, published_date: published_date, genre: genre)
+    puts "Music Album added successfully"
   end
 
   def add_book
@@ -39,7 +50,8 @@ class App
     published_date = gets.chomp
     print 'Cover State: '
     cover_state = gets.chomp
-    book = Book.new(publisher: publisher, published_date: published_date, cover_state: cover_state, label: label)
+    Book.new(publisher: publisher, published_date: published_date, cover_state: cover_state, label: label)
+    puts "Book added successfully"
   end
 
   def add_game
@@ -62,7 +74,7 @@ class App
   end
 
   def list_all_genres
-    puts 'all genres'
+    puts Genre.load_genres
   end
 
   def list_all_labels
@@ -78,6 +90,8 @@ class App
     Author.save
     Book.save
     Label.save
+    MusicAlbum.save
+    Genre.save
     puts "Saved All Data Successfully!"
     puts 'See You Next Time!'
     exit
