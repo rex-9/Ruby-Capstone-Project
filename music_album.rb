@@ -12,6 +12,39 @@ class MusicAlbum < Item
     super(published_date: published_date)
   end
 
+  attr_reader, :genre, :author, :source, :label, :published_date, :albums
+
+  def initialize(genre:, author:, source:, label:, published_date:)
+    super(genre: genre, author: author, source: source, label: label, published_date: published_date)
+    @last_played_at = last_played_at
+    @albums=[]
+  end
+
+  def read
+    if File.exist?('albums.json')
+      album_file = File.read('albums.json')
+      albums = JSON.parse(album_file)
+      @albums << {
+        id: id,
+        genre: genre.name,
+        author: author.first_name + " " + author.last_name,
+        source: source.name,
+        label: label.title,
+        published_date: published_date
+      }
+    else
+      albums=[]
+    end
+  end
+
+  def write
+    if File.exist?('albums.json')
+      album_file = File.read('albums.json','r')
+      File.write('albums.json', JSON.pretty_generate(@albums))
+      "Album saved to albums.json"
+    end
+  end
+
   def can_be_archived?
     super && on_spotify == true
   end
