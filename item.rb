@@ -27,7 +27,7 @@ class Item
   private :can_be_archived?
 
   def move_to_archived?
-    true if can_be_archived? == true
+    can_be_archived? == true
   end
 
   # def genre=(genre)

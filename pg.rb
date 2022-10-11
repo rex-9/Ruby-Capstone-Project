@@ -18,7 +18,6 @@ game = Game.new(
   label: label,
   published_date: '18-03-2000'
 )
-puts game.published_date
-puts game.can_be_archived?
+puts game.save
 
 # genre: genre, author: author, source: source, label: label,

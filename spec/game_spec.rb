@@ -6,8 +6,14 @@ describe Game do
     author = Author.new('Hideaki', 'Miyazaki')
     source = Source.new('Steam')
     label = Label.new('Elden Ring', 'Golden')
-    @game = Game.new(true, Time.now, genre: genre, author: author, source: source, label: label,
-                                     published_date: '18-03-2000')
+    @game = Game.new(
+      true,
+      Time.now,
+      genre: genre,
+      author: author,
+      source: source,
+      label: label,
+      published_date: '18-03-2000')
   end
 
   describe '#new' do
