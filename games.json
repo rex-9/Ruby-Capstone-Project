@@ -1,23 +1,13 @@
 [
   {
-    "id": 421,
+    "id": 538,
     "multiplayer": true,
-    "last_played_at": "2022-10-11 11:21:02 +0630",
-    "author": "JohnDoe",
-    "published_date": "18-03-2000"
-  },
-  {
-    "id": 536,
-    "multiplayer": true,
-    "last_played_at": "2022-10-11 11:33:02 +0630",
-    "author": "John Doe",
-    "published_date": "18-03-2000"
-  },
-  {
-    "id": 499,
-    "multiplayer": true,
-    "last_played_at": "2022-10-11 11:33:51 +0630",
-    "author": "John Doe",
+    "last_played_at": "2022-10-11 19:39:51 +0630",
+    "author": {
+      "id": 345,
+      "first_name": "John",
+      "last_name": "Doe"
+    },
     "published_date": "18-03-2000"
   }
 ]
