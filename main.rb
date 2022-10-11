@@ -55,8 +55,7 @@ class Selection
   end
 
   def abort_method(option, app)
-    app.save
-    app.exit_method unless option != 10
+    app.save_and_exit unless option != 10
   end
 end
 

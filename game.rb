@@ -1,10 +1,12 @@
+require_relative 'author'
 require_relative 'item'
 require 'json'
 
 class Game < Item
-  attr_reader :multiplayer, :last_played_at, :published_date, :author
+  attr_reader :name, :multiplayer, :last_played_at, :published_date, :author
 
-  def initialize(multiplayer:, last_played_at:, published_date:, author:)
+  def initialize(name: ,multiplayer:, last_played_at:, published_date:, author:)
+    @name = name
     @multiplayer = multiplayer
     @last_played_at = last_played_at
     @author = author
@@ -24,6 +26,7 @@ class Game < Item
     all.each do |game|
       games << {
         id: game.id,
+        name: game.name,
         multiplayer: game.multiplayer,
         last_played_at: game.last_played_at,
         author: {
@@ -46,11 +49,22 @@ class Game < Item
     games = JSON.parse(games_file)
     games.each do |game|
       new(
+        name: game['name'],
         multiplayer: game['multiplayer'],
         last_played_at: game['last_played_at'],
         author: Author.new(first_name: game['author']['first_name'], last_name: game['author']['last_name']),
         published_date: game['published_date']
       )
     end
+    all.each do |game|
+      puts "ID: #{game.id}"
+      puts "Name: #{game.name}"
+      puts "Author: #{game.author.first_name} #{game.author.last_name}"
+      puts "Multiplayer: #{game.multiplayer}"
+      puts "Last Played At: #{game.last_played_at}"
+      puts "Published Date: #{game.published_date}"
+      puts "_______________________________"
+    end
+    return
   end
 end

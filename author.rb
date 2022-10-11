@@ -38,12 +38,12 @@ class Author
     authors_file = File.read('authors.json')
     authors = JSON.parse(authors_file)
     authors.each do |author|
-      puts "ID: #{author['id']}"
-      puts "First name: #{author['first_name']}"
-      puts "Last name: #{author['last_name']}"
-      puts "Items: #{author['items']}"
-      puts '-----------------'
       new(first_name: author['first_name'], last_name: author['last_name'])
     end
+    all.each do |author|
+      puts "#{author.first_name} #{author.last_name}"
+      puts '-----------------'
+    end
+    return
   end
 end

@@ -1,24 +1,26 @@
 [
   {
-    "id": 272,
-    "multiplayer": false,
-    "last_played_at": "2022-10-11 20:31:57 +0630",
+    "id": 328,
+    "name": "Elden Ring",
+    "multiplayer": true,
+    "last_played_at": "20-20-20",
     "author": {
-      "id": 341,
-      "first_name": "Rex",
-      "last_name": "Soul"
+      "id": 884,
+      "first_name": "Sa",
+      "last_name": "Sa"
     },
-    "published_date": "10-03-2000"
+    "published_date": "10-10-10"
   },
   {
-    "id": 388,
-    "multiplayer": true,
-    "last_played_at": "2022-10-11 20:31:57 +0630",
+    "id": 349,
+    "name": "Avatar",
+    "multiplayer": false,
+    "last_played_at": "03-03-2000",
     "author": {
-      "id": 341,
-      "first_name": "Rex",
-      "last_name": "Soul"
+      "id": 969,
+      "first_name": "Sa",
+      "last_name": "Sa"
     },
-    "published_date": "18-03-2000"
+    "published_date": "09-09-2009"
   }
 ]

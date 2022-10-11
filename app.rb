@@ -1,4 +1,5 @@
 require_relative 'game'
+require_relative 'author'
 require_relative 'book'
 
 class App
@@ -38,19 +39,21 @@ class App
 
   def add_game
     puts 'Add Game to library'
-    print 'Enter Author: '
-    author = gets.chomp
+    print 'Enter First Name of the Author: '
+    first_name = gets.chomp
+    print 'Enter Last Name of the Author: '
+    last_name = gets.chomp
+    author = Author.new(first_name: first_name, last_name: last_name)
+    print 'Enter The Name of the Game: '
+    name = gets.chomp
     print 'Enter Multiplayer [true or false]: '
-    multiplayer = gets.chomp
+    multiplayer = gets.chomp.downcase == 'true'
     print 'Enter Last Played At: '
     last_played_at = gets.chomp
     print 'Enter publish date: '
     published_date = gets.chomp
-  end
-
-  def exit_method
-    puts 'Goodbye!'
-    exit
+    Game.new(name: name, multiplayer: multiplayer, last_played_at: last_played_at, published_date: published_date, author: author)
+    puts "Game added successfully"
   end
 
   def list_all_genres
@@ -59,5 +62,17 @@ class App
 
   def list_all_labels
     puts 'all labels'
+  end
+
+  def list_all_authors
+    puts Author.load_authors
+  end
+
+  def save_and_exit
+    Game.save
+    Author.save
+    puts "Saved All Data Successfully!"
+    puts 'See You Next Time!'
+    exit
   end
 end
