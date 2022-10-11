@@ -3,30 +3,21 @@
     "id": 421,
     "multiplayer": true,
     "last_played_at": "2022-10-11 11:21:02 +0630",
-    "genre": "Action",
     "author": "JohnDoe",
-    "source": "Steam",
-    "label": "Elden Ring",
     "published_date": "18-03-2000"
   },
   {
     "id": 536,
     "multiplayer": true,
     "last_played_at": "2022-10-11 11:33:02 +0630",
-    "genre": "Action",
     "author": "John Doe",
-    "source": "Steam",
-    "label": "Elden Ring",
     "published_date": "18-03-2000"
   },
   {
     "id": 499,
     "multiplayer": true,
     "last_played_at": "2022-10-11 11:33:51 +0630",
-    "genre": "Action",
     "author": "John Doe",
-    "source": "Steam",
-    "label": "Elden Ring",
     "published_date": "18-03-2000"
   }
 ]

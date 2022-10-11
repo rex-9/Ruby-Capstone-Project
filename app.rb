@@ -1,8 +1,15 @@
 require_relative 'game'
+require_relative 'book'
 
 class App
+  attr_accessor :items
+
+  def initialize
+    @items = []
+  end
+
   def list_books
-    puts 'all books'
+    puts Book.load_books
   end
 
   def list_music_albums
@@ -18,15 +25,27 @@ class App
   end
 
   def add_book
-    puts 'this is where you add a book'
+    puts 'Add book to library'
+    print 'Enter Label: '
+    label = gets.chomp
+    print 'Enter Publisher: '
+    publisher = gets.chomp
+    print 'Enter publish date: '
+    published_date = gets.chomp
+    print 'Cover State: '
+    cover_state = gets.chomp
   end
 
   def add_game
-    puts 'this is where you add a game'
-  end
-
-  def add_movie
-    puts 'this is where you add a movie'
+    puts 'Add Game to library'
+    print 'Enter Author: '
+    author = gets.chomp
+    print 'Enter Multiplayer [true or false]: '
+    multiplayer = gets.chomp
+    print 'Enter Last Played At: '
+    last_played_at = gets.chomp
+    print 'Enter publish date: '
+    published_date = gets.chomp
   end
 
   def exit_method

@@ -9,16 +9,14 @@ def main
     puts 'Please choose an option by entering a number'
     puts ' 1 - List all books'
     puts ' 2 - List all music albums'
-    puts ' 3 - List all movies'
     puts ' 4 - List of games'
-    # puts ' 5 - List all genres (Comedy, Thriller)'
-    # puts ' 6 - List all labels (Gift, New)'
-    # puts ' 7 - List all authors (Stephen King)'
-    # puts ' 8 - List all sources (From a friend, Online shop)'
-    # puts ' 9 - Add a book'
-    # puts '10 - Add a movie'
-    # puts '11 - Add a game'
-    # puts '12 - Exit'
+    puts ' 6 - List all labels (Gift, New)'
+    puts ' 5 - List all genres (Comedy, Thriller)'
+    puts ' 7 - List all authors (Stephen King)'
+    puts ' 8 - Add a Book'
+    puts ' 9 - Add a Game'
+    puts '10 - Add a Music Album'
+    puts '11 - Save and Exit'
     option = gets.chomp.to_i
     select = Selection.new
     select.select_method(option, app)
@@ -61,6 +59,7 @@ class Selection
   end
 
   def abort_method(option, app)
+    app.save
     app.exit_method unless option != 12
   end
 end
