@@ -1,8 +1,10 @@
 require_relative 'game'
+require_relative 'book'
 require_relative 'genre'
 require_relative 'author'
 require_relative 'source'
 require_relative 'label'
+
 
 genre = Genre.new('Action')
 author = Author.new('John', 'Doe')
@@ -15,8 +17,16 @@ game = Game.new(
   published_date: '18-03-2000'
 )
 
+book = Book.new(
+  publisher: true,
+  cover_state: 'good',
+  published_date: '18-03-2015'
+)
+
+
 puts game.can_be_archived?
 
+puts book.can_be_archived?
 # genre.add_item(game)
 # author.add_item(game)
 # label.add_item(game)
