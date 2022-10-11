@@ -7,16 +7,16 @@ def main
   app = App.new
   loop do
     puts 'Please choose an option by entering a number'
-    puts ' 1 - List all books'
-    puts ' 2 - List all music albums'
-    puts ' 4 - List of games'
-    puts ' 6 - List all labels (Gift, New)'
-    puts ' 5 - List all genres (Comedy, Thriller)'
-    puts ' 7 - List all authors (Stephen King)'
-    puts ' 8 - Add a Book'
-    puts ' 9 - Add a Game'
-    puts '10 - Add a Music Album'
-    puts '11 - Save and Exit'
+    puts ' 1 - List all Books'
+    puts ' 2 - Add a Book'
+    puts ' 3 - List all Music Albums'
+    puts ' 4 - Add a Music Album'
+    puts ' 5 - List all Games'
+    puts ' 6 - Add a Game'
+    puts ' 7 - List all Labels (Gift, New)'
+    puts ' 8 - List all Genres (Comedy, Thriller)'
+    puts ' 9 - List all Authors (Stephen King)'
+    puts '10 - Save and Exit'
     option = gets.chomp.to_i
     select = Selection.new
     select.select_method(option, app)
@@ -31,36 +31,32 @@ class Selection
     when 1
       app.list_books
     when 2
-      app.list_music_albums
+      app.add_book
     when 3
-      app.list_movies
+      app.list_music_albums
     when 4
-      app.list_games
+      app.add_music_album
     when 5
-      app.list_all_genres
+      app.list_games
     when 6
-      app.list_all_labels
+      app.add_game
     end
   end
 
   def select_extra_method(option, app)
     case option
     when 7
-      app.list_all_authors
+      app.list_all_genres
     when 8
-      app.list_all_sources
+      app.list_all_labels
     when 9
-      app.add_book
-    when 10
-      app.add_movie
-    when 11
-      app.add_game
+      app.list_all_authors
     end
   end
 
   def abort_method(option, app)
     app.save
-    app.exit_method unless option != 12
+    app.exit_method unless option != 10
   end
 end
 
