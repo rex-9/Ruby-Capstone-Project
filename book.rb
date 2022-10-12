@@ -53,6 +53,9 @@ class Book < Item
         )
       end
     end
+  end
+
+  def self.display
     all.each do |book|
       puts "ID: #{book.id}"
       puts "Publisher: #{book.publisher}"
@@ -61,6 +64,5 @@ class Book < Item
       puts "Published Date: #{book.published_date}"
       puts "_______________________________"
     end
-    return
   end
 end

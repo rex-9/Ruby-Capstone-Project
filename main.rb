@@ -1,10 +1,15 @@
 require_relative 'app'
+require_relative 'book'
+require_relative 'label'
+require_relative 'music_album'
+require_relative 'genre'
+require_relative 'game'
+require_relative 'author'
 
 puts 'Welcome to Catalog of my things'
 puts ' '
 
 def main
-  app = App.new
   loop do
     puts 'Please choose an option by entering a number'
     puts ' 1 - List all Books'
@@ -19,44 +24,55 @@ def main
     puts '10 - Save and Exit'
     option = gets.chomp.to_i
     select = Selection.new
-    select.select_method(option, app)
-    select.select_extra_method(option, app)
-    select.abort_method(option, app)
+    select.select_method(option)
+    select.select_extra_method(option)
+    select.abort_method(option)
   end
 end
 
 class Selection
-  def select_method(option, app)
+  def select_method(option)
     case option
     when 1
-      app.list_books
+      App.list_books
     when 2
-      app.add_book
+      App.add_book
     when 3
-      app.list_music_albums
+      App.list_music_albums
     when 4
-      app.add_music_album
+      App.add_music_album
     when 5
-      app.list_games
+      App.list_games
     when 6
-      app.add_game
+      App.add_game
     end
   end
 
-  def select_extra_method(option, app)
+  def select_extra_method(option)
     case option
     when 7
-      app.list_all_labels
+      App.list_all_labels
     when 8
-      app.list_all_genres
+      App.list_all_genres
     when 9
-      app.list_all_authors
+      App.list_all_authors
     end
   end
 
-  def abort_method(option, app)
-    app.save_and_exit unless option != 10
+  def abort_method(option)
+    App.save_and_exit unless option != 10
   end
 end
 
+def load_data
+  Book.load_books
+  Label.load_labels
+  MusicAlbum.load_albums
+  Genre.load_genres
+  Game.load_games
+  Author.load_authors
+  puts "Data loaded"
+end
+
+load_data
 main

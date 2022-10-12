@@ -50,6 +50,9 @@ class MusicAlbum < Item
         )
       end
     end
+  end
+
+  def self.display
     all.each do |album|
       puts "ID: #{album.id}"
       puts "Genre: #{album.genre.name}"
@@ -57,6 +60,5 @@ class MusicAlbum < Item
       puts "Published Date: #{album.published_date}"
       puts "_______________________________"
     end
-    return
   end
 end

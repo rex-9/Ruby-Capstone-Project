@@ -6,27 +6,19 @@ require_relative 'music_album'
 require_relative 'genre'
 
 class App
-  attr_accessor :items, :labels, :books
-
-  def initialize
-    @items = items
-    @labels = labels
-    @books = books
+  def self.list_books
+    Book.display
   end
 
-  def list_books
-    puts Book.load_books
+  def self.list_music_albums
+    MusicAlbum.display
   end
 
-  def list_music_albums
-    puts MusicAlbum.load_albums
+  def self.list_games
+    Game.display
   end
 
-  def list_games
-    puts Game.load_games
-  end
-
-  def add_music_album
+  def self.add_music_album
     puts 'Add Music Album to library'
     print 'Enter Genre: '
     genre = gets.chomp
@@ -39,7 +31,7 @@ class App
     puts "Music Album added successfully"
   end
 
-  def add_book
+  def self.add_book
     puts 'Add book to library'
     print 'Enter Label: '
     label = gets.chomp
@@ -54,7 +46,7 @@ class App
     puts "Book added successfully"
   end
 
-  def add_game
+  def self.add_game
     puts 'Add Game to library'
     print 'Enter First Name of the Author: '
     first_name = gets.chomp
@@ -73,19 +65,19 @@ class App
     puts "Game added successfully"
   end
 
-  def list_all_genres
-    puts Genre.load_genres
+  def self.list_all_genres
+    Genre.display
   end
 
-  def list_all_labels
-    puts Label.load_labels
+  def self.list_all_labels
+    Label.display
   end
 
-  def list_all_authors
-    puts Author.load_authors
+  def self.list_all_authors
+    Author.display
   end
 
-  def save_and_exit
+  def self.save_and_exit
     Game.save
     Author.save
     Book.save

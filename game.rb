@@ -56,6 +56,8 @@ class Game < Item
         )
       end
     end
+  end
+  def self.display
     all.each do |game|
       puts "ID: #{game.id}"
       puts "Name: #{game.name}"
@@ -65,6 +67,5 @@ class Game < Item
       puts "Published Date: #{game.published_date}"
       puts "_______________________________"
     end
-    return
   end
 end

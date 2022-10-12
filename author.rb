@@ -40,10 +40,12 @@ class Author
         new(first_name: author['first_name'], last_name: author['last_name'])
       end
     end
+  end
+
+  def self.display
     all.each do |author|
       puts "#{author.first_name} #{author.last_name}"
       puts '-----------------'
     end
-    return
   end
 end

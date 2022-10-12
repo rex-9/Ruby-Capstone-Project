@@ -1,10 +1,21 @@
 [
   {
-    "id": 402,
+    "id": 746,
+    "publisher": "Uzumaki",
+    "cover_state": "good",
+    "label": {
+      "id": 714,
+      "title": "Naruto",
+      "color": "Red"
+    },
+    "published_date": "12-2-2000"
+  },
+  {
+    "id": 256,
     "publisher": "ppp",
     "cover_state": "bad",
     "label": {
-      "id": 345,
+      "id": 868,
       "title": "hello",
       "color": "Red"
     },

@@ -1,5 +1,7 @@
+require 'json'
+
 class Genre
-  attr_reader :id,
+  attr_reader :id
   attr_accessor :name, :items
 
   def initialize(name:)
@@ -38,10 +40,12 @@ class Genre
         new(name: genre['name'])
       end
     end
+  end
+
+  def self.display
     all.each do |genre|
       puts "#{genre.name}"
       puts '-----------------'
     end
-    return
   end
 end
