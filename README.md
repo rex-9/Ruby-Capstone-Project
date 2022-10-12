@@ -1,4 +1,7 @@
-# Ruby Capstone Project
+# Ruby Bank
+
+## Description
+- Users can store their favourite Books, Games and Music Albums in this Bank made of Ruby
 
 ## Built With
 
@@ -11,13 +14,13 @@ To get a local copy of this exercice, Please follow these simple example steps.
 #### 1. Clone this repository or download the Zip folder:"
 
 ```bash command
-$ git clone https://github.com/rex-9/Ruby-Capstone-Project.git
+$ git clone https://github.com/rex-9/RubyBank.git
 ```
 
 #### 2. Navigate to the location of the folder in your machine:
 
 ```bash command
-you@your-Pc-name:~$ cd <Ruby-Capstone-Project>
+you@your-Pc-name:~$ cd <RubyBank>
 ```
 
 #### 3. Press Enter to navigate to your local clone.
