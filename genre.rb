@@ -24,7 +24,7 @@ class Genre
     all.each do |genre|
       genres << {
         id: genre.id,
-        name: genre.name,
+        name: genre.name
       }
     end
 
@@ -44,7 +44,7 @@ class Genre
 
   def self.display
     all.each do |genre|
-      puts "#{genre.name}"
+      puts genre.name.to_s
       puts '-----------------'
     end
   end

@@ -1,14 +1,26 @@
 [
   {
-    "id": 58,
+    "id": 240,
     "name": "Elden Ring",
     "multiplayer": true,
     "last_played_at": "20-20-20",
     "author": {
-      "id": 811,
+      "id": 766,
       "first_name": "Miyazaki",
       "last_name": "Hideaki"
     },
     "published_date": "30-30-30"
+  },
+  {
+    "id": 581,
+    "name": "Devil May Cry",
+    "multiplayer": false,
+    "last_played_at": "30-20-10",
+    "author": {
+      "id": 140,
+      "first_name": "Shinichi",
+      "last_name": "Edogawa"
+    },
+    "published_date": "30-20-32"
   }
 ]

@@ -5,7 +5,7 @@ require 'json'
 class Game < Item
   attr_reader :name, :multiplayer, :last_played_at, :published_date, :author
 
-  def initialize(name: ,multiplayer:, last_played_at:, published_date:, author:)
+  def initialize(name:, multiplayer:, last_played_at:, published_date:, author:)
     @name = name
     @multiplayer = multiplayer
     @last_played_at = last_played_at
@@ -59,13 +59,10 @@ class Game < Item
   end
   def self.display
     all.each do |game|
-      puts "ID: #{game.id}"
-      puts "Name: #{game.name}"
-      puts "Author: #{game.author.first_name} #{game.author.last_name}"
-      puts "Multiplayer: #{game.multiplayer}"
-      puts "Last Played At: #{game.last_played_at}"
-      puts "Published Date: #{game.published_date}"
-      puts "_______________________________"
+      puts "ID: #{game.id} \nName: #{game.name}"
+      puts "Author: #{game.author.first_name} #{game.author.last_name} \nMultiplayer: #{game.multiplayer}"
+      puts "Last Played At: #{game.last_played_at} \nPublished Date: #{game.published_date}"
+      puts '_______________________________'
     end
   end
 end

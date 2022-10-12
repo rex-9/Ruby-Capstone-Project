@@ -36,21 +36,15 @@ class Label
     if File.exist?('labels.json')
       labels_file = File.read('labels.json')
       labels = JSON.parse(labels_file)
-      count = all.count
-      puts all.count
-      puts labels.count
       labels.each do |label|
         new(title: label['title'])
         puts "New Label: #{label['title']}"
       end
-      puts all.count
-      puts labels.count
     end
     puts 'labels loaded'
   end
 
   def self.display
-    puts all.count
     all.each do |label|
       puts "#{label.title}"
       puts '-----------------'
