@@ -1,6 +1,5 @@
 # Ruby Bank
 
-## Description
 - Users can store their favourite Books, Games and Music Albums in this Bank made of Ruby
 
 ## Built With

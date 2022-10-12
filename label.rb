@@ -40,7 +40,6 @@ class Label
     labels.each do |label|
       new(title: label['title'])
     end
-    puts 'labels loaded'
   end
 
   def self.display
