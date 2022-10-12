@@ -3,7 +3,13 @@ require_relative './spec_helper'
 describe Game do
   before(:each) do
     @author = Author.new(first_name: 'Hideaki', last_name: 'Miyazaki')
-    @game = Game.new(name: 'Elden Ring', multiplayer: true, last_played_at: '18-03-2020', published_date: '18-03-2000', author: @author)
+    @game = Game.new(
+      name: 'Elden Ring',
+      multiplayer: true,
+      last_played_at: '18-03-2020',
+      published_date: '18-03-2000',
+      author: @author
+    )
   end
 
   describe '#new' do
