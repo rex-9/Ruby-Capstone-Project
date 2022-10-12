@@ -41,17 +41,17 @@ class Book < Item
   end
 
   def self.load_books
-    if File.exist?('books.json')
-      books_file = File.read('books.json')
-      books = JSON.parse(books_file)
-      books.each do |book|
-        new(
-          publisher: book['publisher'],
-          cover_state: book['cover_state'],
-          label: Label.new(title: book['label']['title']),
-          published_date: book['published_date']
-        )
-      end
+    return unless File.exist?('books.json')
+
+    books_file = File.read('books.json')
+    books = JSON.parse(books_file)
+    books.each do |book|
+      new(
+        publisher: book['publisher'],
+        cover_state: book['cover_state'],
+        label: Label.new(title: book['label']['title']),
+        published_date: book['published_date']
+      )
     end
   end
 

@@ -39,16 +39,16 @@ class MusicAlbum < Item
   end
 
   def self.load_albums
-    if File.exist?('albums.json')
-      albums_file = File.read('albums.json')
-      albums = JSON.parse(albums_file)
-      albums.each do |album|
-        new(
-          on_spotify: album['on_spotify'],
-          genre: Genre.new(name: album['genre']['name']),
-          published_date: album['published_date']
-        )
-      end
+    return unless File.exist?('albums.json')
+
+    albums_file = File.read('albums.json')
+    albums = JSON.parse(albums_file)
+    albums.each do |album|
+      new(
+        on_spotify: album['on_spotify'],
+        genre: Genre.new(name: album['genre']['name']),
+        published_date: album['published_date']
+      )
     end
   end
 

@@ -71,7 +71,7 @@ def load_data
   Genre.load_genres
   Game.load_games
   Author.load_authors
-  puts "Data loaded"
+  puts 'Data loaded'
 end
 
 load_data

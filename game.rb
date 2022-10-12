@@ -43,20 +43,21 @@ class Game < Item
   end
 
   def self.load_games
-    if File.exist?('games.json')
-      games_file = File.read('games.json')
-      games = JSON.parse(games_file)
-      games.each do |game|
-        new(
-          name: game['name'],
-          multiplayer: game['multiplayer'],
-          last_played_at: game['last_played_at'],
-          author: Author.new(first_name: game['author']['first_name'], last_name: game['author']['last_name']),
-          published_date: game['published_date']
-        )
-      end
+    return unless File.exist?('games.json')
+
+    games_file = File.read('games.json')
+    games = JSON.parse(games_file)
+    games.each do |game|
+      new(
+        name: game['name'],
+        multiplayer: game['multiplayer'],
+        last_played_at: game['last_played_at'],
+        author: Author.new(first_name: game['author']['first_name'], last_name: game['author']['last_name']),
+        published_date: game['published_date']
+      )
     end
   end
+
   def self.display
     all.each do |game|
       puts "ID: #{game.id} \nName: #{game.name}"

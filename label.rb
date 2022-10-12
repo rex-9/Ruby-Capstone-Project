@@ -33,20 +33,19 @@ class Label
   end
 
   def self.load_labels
-    if File.exist?('labels.json')
-      labels_file = File.read('labels.json')
-      labels = JSON.parse(labels_file)
-      labels.each do |label|
-        new(title: label['title'])
-        puts "New Label: #{label['title']}"
-      end
+    return unless File.exist?('labels.json')
+
+    labels_file = File.read('labels.json')
+    labels = JSON.parse(labels_file)
+    labels.each do |label|
+      new(title: label['title'])
     end
     puts 'labels loaded'
   end
 
   def self.display
     all.each do |label|
-      puts "#{label.title}"
+      puts label.title.to_s
       puts '-----------------'
     end
   end

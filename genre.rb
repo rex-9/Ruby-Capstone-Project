@@ -33,12 +33,12 @@ class Genre
   end
 
   def self.load_genres
-    if File.exist?('genres.json')
-      genres_file = File.read('genres.json')
-      genres = JSON.parse(genres_file)
-      genres.each do |genre|
-        new(name: genre['name'])
-      end
+    return unless File.exist?('genres.json')
+
+    genres_file = File.read('genres.json')
+    genres = JSON.parse(genres_file)
+    genres.each do |genre|
+      new(name: genre['name'])
     end
   end
 
